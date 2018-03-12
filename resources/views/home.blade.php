@@ -29,4 +29,14 @@
             </div>
         </div>
     </div>
+    <!--<div class='row'>
+      <div class="col-md-3 offset-md-4">
+          <div class="card">
+              <img class="card-img-top" id="img2" src="{{ asset('images/calendario.png') }}" alt="Card image cap">
+              <div class="card-body text-center" id="seccionBtn1">
+                  <a href="appointments/index" class="btn btn-primary">Administrar Citas</a>
+              </div>
+          </div>
+      </div>
+    </div>-->
 @endsection

@@ -16,7 +16,7 @@
 					<th width="20px">CI</th>
 					<th width="20px">Email</th>
 					<th>Descripción</th>
-					<th colspan="3">Acción</th>
+					<th colspan="4">Acción</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,6 +28,7 @@
 						<td>{{ $doctor->email }}</td>
 						<td>{{ $doctor->description }}</td>
 						<td><a href="{{ route('doctors.show', $doctor->id) }}" class="btn btn-link">Ver</a></td>
+						<td><a href="appointments/{{ $doctor->id }}" class="btn btn-link">Citas</a></td>
 						<td><a href="{{ route('doctors.edit', $doctor->id) }}" class="btn btn-link">Editar</a></td>
 						<td>
 							<form action="{{ route('doctors.destroy', $doctor->id) }}" method="post">
