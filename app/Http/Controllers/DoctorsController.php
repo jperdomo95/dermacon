@@ -72,4 +72,13 @@ class DoctorsController extends Controller
       $doctor->delete();
       return back()->with('info', 'El Doctor ha sido eliminado');
     }
+
+    public function appointments($id)
+    {
+      $doctors = Doctor::find($id);
+      $patients = $doctors->patients()->paginate(10);
+      //$appointments = $doctors->patients()->get();
+      return view('appointments.index', compact('patients'));
+      //die($doctors->appointments());
+    }
 }

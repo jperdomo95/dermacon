@@ -17,6 +17,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('users', 'UsersController');
 	Route::resource('doctors', 'DoctorsController');
 	Route::resource('patients', 'PatientsController');
+	Route::get('appointments/{id}', 'DoctorsController@appointments');
+	Route::get('appointments/create', 'AppointmentsController@create');
 });
 
 Auth::routes();
