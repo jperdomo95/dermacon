@@ -17,8 +17,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('users', 'UsersController');
 	Route::resource('doctors', 'DoctorsController');
 	Route::resource('patients', 'PatientsController');
-	Route::get('appointments/{id}', 'DoctorsController@appointments');
-	Route::get('appointments/create', 'AppointmentsController@create');
+	Route::post('SeeAppointments/{id}', 'AppointmentsController@SeeAppointmentsByDoctor');
+	Route::post('appointments/create/{patient}', 'AppointmentsController@create');
+	Route::post('/appointments/store', 'AppointmentsController@store');
 });
 
 Auth::routes();

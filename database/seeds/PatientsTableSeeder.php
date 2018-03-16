@@ -1,4 +1,4 @@
-<?php$doctor
+<?php
 
 use Illuminate\Database\Seeder;
 use App\Patient;

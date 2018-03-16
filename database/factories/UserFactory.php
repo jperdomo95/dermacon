@@ -44,5 +44,7 @@ $factory->define(App\Patient::class, function (Faker $faker) {
     'local_phone' => $faker->e164PhoneNumber(),
     'personal_phone' => $faker->e164PhoneNumber(),
     'address' => $faker->streetAddress(),
+    'created_at' => $faker->dateTimeThisDecade,
+    'updated_at' => $faker->dateTimeThisDecade,
   ];
 });

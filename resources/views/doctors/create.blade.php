@@ -5,11 +5,13 @@
   @include('users.fragment.error')
       <div class="card">
         <div class="card-body">
-          {!! Form::open(['route' => 'doctors.store']) !!}
-
+          <form action="{{ route('doctors.store') }}" method="post">
+            {{ csrf_field() }}
             @include('doctors.fragment.form')
+          </form>
 
-          {!! Form::close() !!}
+
+
         </div>
       </div>
 </div>

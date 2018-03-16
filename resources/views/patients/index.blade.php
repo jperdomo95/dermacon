@@ -11,24 +11,28 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th width="20px">ID</th>
-					<th width="20px">Nombre</th>
+					<th width="50px">Nombre</th>
 					<th width="20px">CI</th>
 					<th width="20px">Email</th>
 					<th>Local</th>
 					<th>Personal</th>
-					<th colspan="3">Acción</th>
+					<th width="20px" colspan="4">Acción</th>
 				</tr>
 			</thead>
 			<tbody>
 				@foreach($patients as $patient)
 					<tr>
-						<td>{{ $patient->id }}</td>
 						<td>{{ $patient->name }}</td>
 						<td>{{ $patient->ci }}</td>
 						<td>{{ $patient->email }}</td>
 						<td>{{ $patient->local_phone }}</td>
 						<td>{{ $patient->personal_phone }}</td>
+						<td>
+							<form action="appointments/create/{{ $patient->id }}" method="post">
+								{{ csrf_field() }}
+								<button class="btn btn-link">Pedir Cita</button>
+							</form>
+						</td>
 						<td><a href="{{ route('patients.show', $patient->id) }}" class="btn btn-link">Ver</a></td>
 						<td><a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-link">Editar</a></td>
 						<td>

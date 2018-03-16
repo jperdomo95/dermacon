@@ -4,11 +4,11 @@
   @include('appointments.fragment.error')
       <div class="card">
         <div class="card-body">
-          {!! Form::open(['route' => 'appointments.store']) !!}
-
+          <h3 class="card-title">Pedir Citas</h3>
+          <form action="/appointments/store" method="post">
+            {{ csrf_field() }}
             @include('appointments.fragment.form')
-
-          {!! Form::close() !!}
+          </form>
         </div>
       </div>
 </div>

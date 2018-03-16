@@ -28,7 +28,12 @@
 						<td>{{ $doctor->email }}</td>
 						<td>{{ $doctor->description }}</td>
 						<td><a href="{{ route('doctors.show', $doctor->id) }}" class="btn btn-link">Ver</a></td>
-						<td><a href="appointments/{{ $doctor->id }}" class="btn btn-link">Citas</a></td>
+						<td>
+							<form action="SeeAppointments/{{ $doctor->id }}" method="post">
+								{{ csrf_field() }}
+								<button class="btn btn-link">Citas</button>
+							</form>
+						</td>
 						<td><a href="{{ route('doctors.edit', $doctor->id) }}" class="btn btn-link">Editar</a></td>
 						<td>
 							<form action="{{ route('doctors.destroy', $doctor->id) }}" method="post">

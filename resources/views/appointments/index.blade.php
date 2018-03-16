@@ -3,10 +3,7 @@
 @section('content')
 <div class="row">
 	<div class="col-md-8">
-		<h2>
-			Listado de Citas
-			<a href="/appointments/create" class="btn btn-primary float-right">Nueva Cita</a>
-		</h2>
+
 		@include('appointments.fragment.info')
 		<table class="table">
 			<thead>
@@ -39,7 +36,7 @@
 		{{ $patients->links('pagination::bootstrap-4') }}
 	</div>
 	<div class="col-md-4">
-		@include('doctors.fragment.aside')
+		@include('appointments.fragment.aside')
 	</div>
 </div>
 @endsection
